@@ -1,0 +1,81 @@
+@value makerBlack, makerWhite, makerGrey, makerLightGrey from '../../common/colors.css';
+
+.header {
+  background-color: makerBlack;
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  padding: 10px 15px 10px 25px;
+}
+
+.imgs {
+  display: flex;
+  justify-content: left;
+  padding-right: 5px;
+  width: 35px;
+  height: 22px;
+}
+
+.title {
+  margin: 0;
+  font-size: 1.5rem;
+  color: makerWhite;
+}
+
+.search {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.input {
+  width: 80%;
+  border: 1px solid makerGrey;
+  padding-left: 0.8rem;
+  background-color: makerBlack;
+  color: makerLightGrey;
+  font-size: 1.2rem;
+}
+
+.input::placeholder {
+  color: makerLightGrey;
+  font-size: 1.2rem;
+}
+
+.button {
+  border: 0;
+  background-color: makerGrey;
+  padding: 0 15px 0 15px;
+  cursor: pointer;
+}
+
+.usermenu {
+  display: flex;
+}
+
+.video,
+.notice,
+.user {
+  margin: 15px;
+  color: makerWhite;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.video:hover {
+  transform: scale(1.2);
+}
+
+.notice:hover {
+  transform: scale(1.2);
+}
+
+.user:hover {
+  transform: scale(1.2);
+}
