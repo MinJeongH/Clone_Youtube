@@ -28,7 +28,7 @@ const SideBar = () => {
       </button>
       <button className={styles.button}>
         <img className={styles.rocker} src="/images/rocker.png" alt="rocker" />
-        Rocker
+        Storage
       </button>
     </section>
   );

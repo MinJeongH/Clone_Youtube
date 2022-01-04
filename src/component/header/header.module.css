@@ -1,7 +1,7 @@
-@value makerBlack, makerWhite, makerGrey, makerLightGrey from '../../common/colors.css';
+@value makerBlack, makerLightBlack, makerWhite, makerGrey, makerLightGrey from '../../common/colors.css';
 
 .header {
-  background-color: makerBlack;
+  background-color: makerLightBlack;
   display: flex;
   justify-content: space-between;
 }
@@ -15,7 +15,7 @@
 .bar {
   color: makerWhite;
   font-size: 1.5rem;
-  padding-right: 20px;
+  padding: 0 20px 0 5px;
   cursor: pointer;
 }
 
@@ -37,8 +37,8 @@
   display: flex;
   flex: 1;
   justify-content: center;
-  margin-top: 5px;
-  margin-bottom: 5px;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
 .input {

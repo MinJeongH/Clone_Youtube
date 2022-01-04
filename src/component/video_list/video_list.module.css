@@ -1,0 +1,8 @@
+@value makerBlack from "../../common/colors.css";
+
+.container {
+  background-color: makerBlack;
+  width: 100%;
+  display: flex;
+  padding-top: 25px;
+}

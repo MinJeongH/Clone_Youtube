@@ -1,9 +1,9 @@
-@value makerBlack, makerWhite, makerGrey from '../../common/colors.css';
+@value makerBlack, makerLightBlack, makerWhite, makerGrey from '../../common/colors.css';
 
 .sidebar {
   display: flex;
   flex-direction: column;
-  background-color: makerBlack;
+  background-color: makerLightBlack;
   justify-content: left;
   align-items: center;
   width: 80px;
@@ -16,7 +16,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: makerBlack;
+  background-color: makerLightBlack;
   border: 0;
   color: makerWhite;
 }
