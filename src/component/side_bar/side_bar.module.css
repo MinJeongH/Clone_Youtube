@@ -1,0 +1,43 @@
+@value makerBlack, makerWhite, makerGrey from '../../common/colors.css';
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  background-color: makerBlack;
+  justify-content: left;
+  align-items: center;
+  width: 80px;
+  height: 100vh;
+}
+
+.button {
+  width: 100%;
+  height: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: makerBlack;
+  border: 0;
+  color: makerWhite;
+}
+
+.button:hover {
+  background-color: makerGrey;
+}
+
+.home,
+.compass {
+  width: 24px;
+  height: 24px;
+  color: makerWhite;
+  padding: 16px 0 5px 0;
+  cursor: pointer;
+}
+
+.sub,
+.rocker {
+  width: 30px;
+  height: 28px;
+  padding: 16px 0 5px 0;
+  cursor: pointer;
+}
