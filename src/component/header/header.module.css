@@ -12,6 +12,13 @@
   padding: 10px 15px 10px 25px;
 }
 
+.bar {
+  color: makerWhite;
+  font-size: 1.5rem;
+  padding-right: 20px;
+  cursor: pointer;
+}
+
 .imgs {
   display: flex;
   justify-content: left;
@@ -53,6 +60,10 @@
   background-color: makerGrey;
   padding: 0 15px 0 15px;
   cursor: pointer;
+}
+
+.bicon {
+  font-size: 1.3rem;
 }
 
 .usermenu {
