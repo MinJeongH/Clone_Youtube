@@ -2,8 +2,12 @@ import React, { MouseEvent, useState } from "react";
 import styles from "./video_item.module.css";
 import { faEllipsisV } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { IVideo } from "../../service/exportInterface";
 
-const VideoItem = () => {
+import { timeForToday } from "../../common/time";
+import { viewToCount } from "../../common/countViews";
+
+const VideoItem = ({ snippet, statistics }: IVideo) => {
   const [showMenu, setShowMenu] = useState(false);
 
   const menuIconEventIn = (event: MouseEvent<HTMLDivElement>) => {
@@ -25,7 +29,7 @@ const VideoItem = () => {
       >
         <img
           className={styles.thumnail}
-          src="/images/thumnail_sample.jpg"
+          src={snippet.thumbnails.medium.url}
           alt="thumnail"
         />
         <div className={styles.metadata}>
@@ -35,11 +39,13 @@ const VideoItem = () => {
             alt="usericon"
           />
           <div className={styles.texts}>
-            <p className={styles.title}>title</p>
-            <p className={styles.channel}>channel_title</p>
+            <p className={styles.title}>{snippet.title}</p>
+            <p className={styles.channel}>{snippet.channelTitle}</p>
             <div className={styles.textdetail}>
-              <p className={styles.views}>channel_views</p>
-              <p className={styles.time}>upload_time</p>
+              <p className={styles.views}>
+                {viewToCount(statistics.viewCount)}
+              </p>
+              <p className={styles.time}>{timeForToday(snippet.publishedAt)}</p>
             </div>
           </div>
           <div className={styles.menu}>
