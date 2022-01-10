@@ -8,6 +8,8 @@
   align-items: center;
   width: 80px;
   height: 100vh;
+  position: sticky;
+  top: 54px;
 }
 
 .button {
@@ -29,6 +31,7 @@
 .compass {
   width: 24px;
   height: 24px;
+  fill: makerWhite;
   color: makerWhite;
   padding: 16px 0 5px 0;
   cursor: pointer;
@@ -40,4 +43,10 @@
   height: 28px;
   padding: 16px 0 5px 0;
   cursor: pointer;
+}
+
+@media (max-width: 800px) {
+  .sidebar {
+    display: none;
+  }
 }

@@ -7,8 +7,7 @@ const SideBar = () => {
   return (
     <section className={styles.sidebar}>
       <button className={styles.button}>
-        <FontAwesomeIcon className={styles.home} icon={faHome} size="2x" />
-        Home
+        <img className={styles.home} src="/icons/home.svg" alt="home" />홈
       </button>
       <button className={styles.button}>
         <FontAwesomeIcon
@@ -16,7 +15,7 @@ const SideBar = () => {
           icon={faCompass}
           size="2x"
         />
-        Research
+        탐색
       </button>
       <button className={styles.button}>
         <img
@@ -24,11 +23,11 @@ const SideBar = () => {
           src="/images/subscribe.png"
           alt="subscribe"
         />
-        Subscribe
+        구독
       </button>
       <button className={styles.button}>
         <img className={styles.rocker} src="/images/rocker.png" alt="rocker" />
-        Storage
+        보관함
       </button>
     </section>
   );

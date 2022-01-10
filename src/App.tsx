@@ -15,13 +15,13 @@ function App({ youtube }: IAppProps) {
   }, [youtube]);
 
   return (
-    <>
+    <div className={styles.topContainer}>
       <Header />
       <div className={styles.main}>
         <SideBar />
         <VideoList videos={videos} />
       </div>
-    </>
+    </div>
   );
 }
 

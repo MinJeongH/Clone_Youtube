@@ -4,6 +4,9 @@
   background-color: makerLightBlack;
   display: flex;
   justify-content: space-between;
+  position: sticky;
+  width: 100%;
+  top: 0px;
 }
 
 .logo {
