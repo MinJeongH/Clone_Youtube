@@ -9,7 +9,7 @@
   width: 80px;
   height: 100vh;
   position: sticky;
-  top: 54px;
+  top: 50px;
 }
 
 .button {
@@ -31,7 +31,6 @@
 .compass {
   width: 24px;
   height: 24px;
-  fill: makerWhite;
   color: makerWhite;
   padding: 16px 0 5px 0;
   cursor: pointer;
@@ -42,6 +41,7 @@
   width: 30px;
   height: 28px;
   padding: 16px 0 5px 0;
+  color: makerWhite;
   cursor: pointer;
 }
 

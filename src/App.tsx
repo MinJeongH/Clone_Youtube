@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
-import logo from "./logo.svg";
 import styles from "./App.module.css";
 import VideoList from "./component/video_list/video_list";
 import Header from "./component/header/header";
 import SideBar from "./component/side_bar/side_bar";
 import Youtube from "./service/youtube";
 import { IAppProps, IVideo } from "./service/exportInterface";
+import SideBarWide from "./component/side_bar/side_bar_wide";
 
 function App({ youtube }: IAppProps) {
   const [videos, setVideos] = useState<IVideo[]>([]);
@@ -18,7 +18,8 @@ function App({ youtube }: IAppProps) {
     <div className={styles.topContainer}>
       <Header />
       <div className={styles.main}>
-        <SideBar />
+        <SideBarWide />
+        {/* <SideBar /> */}
         <VideoList videos={videos} />
       </div>
     </div>
