@@ -3,9 +3,11 @@
 .topContainer {
   position: relative;
   background-color: makerBlack;
+  height: 100%;
 }
 
 .main {
   display: flex;
   flex-direction: row;
+  height: 100%;
 }

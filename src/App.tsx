@@ -16,9 +16,9 @@ function App({ youtube }: IAppProps) {
 
   return (
     <div className={styles.topContainer}>
-      <Header />
+      <Header />  
+      <SideBarWide />
       <div className={styles.main}>
-        <SideBarWide />
         {/* <SideBar /> */}
         <VideoList videos={videos} />
       </div>
