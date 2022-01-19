@@ -10,3 +10,10 @@
   padding-top: 25px;
   margin: 0 16px;
 }
+
+.main {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  height: 100%;
+}

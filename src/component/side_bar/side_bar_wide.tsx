@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styles from "./side_bar_wide.module.css";
 
 const SideBarWide = () => {
@@ -7,9 +8,11 @@ const SideBarWide = () => {
       <section className={styles.sidebarWide}>
         <div className={styles.barcontent}>
           <div className={styles.homeguide}>
-            <button className={styles.button}>
-              <span className={`material-icons ${styles.home}`}>home</span>홈
-            </button>
+            <Link to={"/"} className={styles.linkHome}>
+              <button className={styles.button}>
+                <span className={`material-icons ${styles.home}`}>home</span>홈
+              </button>
+            </Link>
             <button className={styles.button}>
               <span className={`material-icons ${styles.compass}`}>
                 explore

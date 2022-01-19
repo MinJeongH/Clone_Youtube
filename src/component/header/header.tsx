@@ -17,9 +17,10 @@ const Header = ({ setShowside }: IsetShowside) => {
         <span className={`material-icons ${styles.bar}`} onClick={sendShowside}>
           menu
         </span>
-
-        <img className={styles.imgs} src="/images/logo.png" alt="logo" />
-        <h1 className={styles.title}>Youtube</h1>
+        <Link to={"/"} className={styles.home}>
+          <img className={styles.imgs} src="/images/logo.png" alt="logo" />
+          <h1 className={styles.title}>Youtube</h1>
+        </Link>
       </div>
       <div className={styles.search}>
         <input className={styles.input} type="search" placeholder="Search" />

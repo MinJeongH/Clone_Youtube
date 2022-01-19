@@ -19,10 +19,3 @@
   position: relative;
   background-color: makerBlack;
 }
-
-.main {
-  display: flex;
-  position: relative;
-  flex-direction: row;
-  height: 100%;
-}

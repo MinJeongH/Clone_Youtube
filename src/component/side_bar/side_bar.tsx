@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styles from "./side_bar.module.css";
 
 interface Ishowside {
@@ -8,9 +9,11 @@ interface Ishowside {
 const SideBar = ({ showside }: Ishowside) => {
   return (
     <section className={`${styles.sidebar} ${showside && styles.sidebarLeft}`}>
-      <button className={styles.button}>
-        <span className={`material-icons ${styles.home}`}>home</span>홈
-      </button>
+      <Link to={"/"} className={styles.linkHome}>
+        <button className={styles.button}>
+          <span className={`material-icons ${styles.home}`}>home</span>홈
+        </button>
+      </Link>
       <button className={styles.button}>
         <span className={`material-icons ${styles.compass}`}>explore</span>
         탐색
