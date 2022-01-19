@@ -4,13 +4,7 @@ import styles from "./side_bar_wide.module.css";
 const SideBarWide = () => {
   return (
     <>
-      <section className={styles.sidebackground} />
       <section className={styles.sidebarWide}>
-        <div className={styles.header}>
-          <span className={`material-icons ${styles.bar}`}>menu</span>
-          <img className={styles.imgs} src="/images/logo.png" alt="logo" />
-          <h1 className={styles.title}>Youtube</h1>
-        </div>
         <div className={styles.barcontent}>
           <div className={styles.homeguide}>
             <button className={styles.button}>
@@ -126,11 +120,12 @@ const SideBarWide = () => {
             </button>
           </div>
           <div className={styles.footer}>
-            이 홈페이지는 개발자 함민정의 유투브 클론코딩 페이지 입니다. Youtube
+            이 홈페이지는 개발자 함민정의 유튜브 클론코딩 페이지 입니다. Youtube
             API V3를 사용하여 제작되었습니다.
           </div>
         </div>
       </section>
+      <section className={styles.sidebackground} />
     </>
   );
 };

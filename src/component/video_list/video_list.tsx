@@ -8,6 +8,7 @@ const VideoList = ({ videos }: IVideoList) => (
     {videos.map((video) => (
       <VideoItem
         key={video.id}
+        id={video.id}
         snippet={video.snippet}
         statistics={video.statistics}
       />

@@ -1,9 +1,13 @@
 import React from "react";
 import styles from "./side_bar.module.css";
 
-const SideBar = () => {
+interface Ishowside {
+  showside: boolean;
+}
+
+const SideBar = ({ showside }: Ishowside) => {
   return (
-    <section className={styles.sidebar}>
+    <section className={`${styles.sidebar} ${showside && styles.sidebarLeft}`}>
       <button className={styles.button}>
         <span className={`material-icons ${styles.home}`}>home</span>홈
       </button>

@@ -1,13 +1,28 @@
-@value makerBlack from "./common/colors.css";
+@value makerBlack, makerLightGrey from "./common/colors.css";
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  height: 10%;
+  background-color: makerLightGrey;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: makerBlack;
+}
 
 .topContainer {
   position: relative;
   background-color: makerBlack;
-  height: 100%;
 }
 
 .main {
   display: flex;
+  position: relative;
   flex-direction: row;
   height: 100%;
 }

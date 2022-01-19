@@ -1,11 +1,23 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styles from "./header.module.css";
 
-const Header = () => {
+interface IsetShowside {
+  setShowside: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+const Header = ({ setShowside }: IsetShowside) => {
+  const sendShowside = () => {
+    setShowside((prev) => !prev);
+  };
+
   return (
     <header className={styles.header}>
       <div className={styles.logo}>
-        <span className={`material-icons ${styles.bar}`}>menu</span>
+        <span className={`material-icons ${styles.bar}`} onClick={sendShowside}>
+          menu
+        </span>
+
         <img className={styles.imgs} src="/images/logo.png" alt="logo" />
         <h1 className={styles.title}>Youtube</h1>
       </div>

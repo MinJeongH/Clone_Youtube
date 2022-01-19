@@ -3,22 +3,22 @@
 .sidebackground {
   display: flex;
   position: absolute;
-  top: 0;
+  top: 0px;
   background-color: makerBlack;
   width: 100%;
-  height: 100vh;
+  height: 100%;
   opacity: 0.5;
 }
 
 .sidebarWide {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  position: absolute;
-  top: 0px;
+  position: sticky;
+  top: 50px;
   width: 290px;
   height: 100vh;
   background-color: makerLightBlack;
+  z-index: 1000;
 }
 
 .barcontent {
@@ -30,43 +30,15 @@
 
 .barcontent::-webkit-scrollbar {
   width: 10px;
-  height: 10px;
 }
 
 .barcotent::-webkit-scrollbar-thumb {
-  height: 20%;
-  background-color: makerWhite;
+  height: 10%;
+  background-color: makerLightGrey;
   border-radius: 50%;
 }
 .barcontent::-webkit-scrollbar-track {
-  background-color: wheat;
-}
-
-.header {
-  display: flex;
-  align-items: center;
-  margin-top: 15px;
-}
-
-.bar {
-  font-size: 1.8rem;
-  padding: 0 20px 0 0;
-  color: makerWhite;
-  cursor: pointer;
-}
-
-.imgs {
-  display: flex;
-  justify-content: left;
-  padding-right: 5px;
-  width: 35px;
-  height: 22px;
-}
-
-.title {
-  margin: 0;
-  font-size: 1.5rem;
-  color: makerWhite;
+  background-color: makerLightBlack;
 }
 
 .button {
