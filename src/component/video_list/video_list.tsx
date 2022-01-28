@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { IVideoList } from "../../service/exportInterface";
+import { IVideoList } from "../../service/export_Interface";
 import VideoItem from "../video_item/video_item";
 import styles from "./video_list.module.css";
 import Header from "../header/header";

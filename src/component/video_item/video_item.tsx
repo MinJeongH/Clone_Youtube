@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import styles from "./video_item.module.css";
 import { faEllipsisV } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { IVideo } from "../../service/exportInterface";
+import { IVideo } from "../../service/export_Interface";
 
 import { timeForToday } from "../../common/time";
 import { viewToCount } from "../../common/countViews";

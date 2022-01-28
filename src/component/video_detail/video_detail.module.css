@@ -1,6 +1,30 @@
+@value makerWhite from '../../common/colors.css';
+
 .main {
   display: flex;
   position: relative;
   flex-direction: row;
   height: 100%;
+  margin-top: 20px;
+}
+
+.detail {
+  display: flex;
+  flex-direction: column;
+  color: makerWhite;
+  width: 60%;
+}
+
+.video {
+  width: 640px;
+  height: 360px;
+}
+
+.title {
+  font-size: 18px;
+}
+
+.side {
+  display: flex;
+  width: 30%;
 }

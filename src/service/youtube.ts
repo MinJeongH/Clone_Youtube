@@ -1,5 +1,5 @@
 import axios, { Axios, AxiosInstance } from "axios";
-import { IVideo } from "./exportInterface";
+import { IVideo } from "./export_Interface";
 
 class Youtube {
   youtube: AxiosInstance;
@@ -25,7 +25,7 @@ class Youtube {
         params: {
           part: 'snippet,statistics',
           id: id,
-          regionCdoe: 'KR',
+          regionCode: 'KR',
         },
       })
 
@@ -37,6 +37,20 @@ class Youtube {
         return undefined
       }
     }
+  }
+
+  async relatedVideo(id:string) { 
+    const response = await this.youtube.get('search', {
+      params: {
+        type: 'video',
+        part: 'snippet',
+        relatedToVideoId: id,
+        maxResults: 20,
+        regionCode: 'KR',
+      },
+    })
+
+    return response.data.items;
   }
 }
 

@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { IVideo } from "../../service/exportInterface";
+import { IRelatedVideo, IVideo } from "../../service/export_Interface";
 import styles from "./video_detail.module.css";
 import Youtube from "../../service/youtube";
 import Header from "../header/header";
 import SideBar from "../side_bar/side_bar";
 import SideBarWide from "../side_bar/side_bar_wide";
+import VideoRelated from "../video_related/video_related";
+import VideoList from "../video_list/video_list";
 
 interface IYoutubeProps {
   youtube: Youtube;
@@ -14,11 +16,16 @@ interface IYoutubeProps {
 const VideoDetail = ({ youtube }: IYoutubeProps) => {
   const [selectvideo, setSelectvideo] = useState<IVideo>();
   const [showside, setShowside] = useState(false);
+  const [relatedvideos, setRelatedvideos] = useState<IRelatedVideo[]>([]);
   const { idparams } = useParams();
 
   useEffect(() => {
-    if (idparams)
+    if (idparams) {
       youtube.viewVideo(idparams).then((video) => setSelectvideo(video));
+      youtube
+        .relatedVideo(idparams)
+        .then((relatedvideos) => setRelatedvideos(relatedvideos));
+    }
   }, [idparams]);
 
   return (
@@ -26,7 +33,6 @@ const VideoDetail = ({ youtube }: IYoutubeProps) => {
       <Header setShowside={setShowside} />
       <div className={styles.main}>
         {showside && <SideBarWide />}
-        <SideBar showside={showside} />
         <section className={styles.detail}>
           {selectvideo && (
             <>
@@ -39,13 +45,18 @@ const VideoDetail = ({ youtube }: IYoutubeProps) => {
                 frameBorder="0"
                 allowFullScreen
               ></iframe>
-              <h2>{selectvideo.snippet.title}</h2>
-              <h3>{selectvideo.snippet.channelTitle}</h3>
+              <p className={styles.title}>{selectvideo.snippet.title}</p>
+              <p className={styles.channel}>
+                {selectvideo.snippet.channelTitle}
+              </p>
               <pre className={styles.description}>
                 {selectvideo.snippet.description}
               </pre>
             </>
           )}
+        </section>
+        <section className={styles.side}>
+          <VideoRelated relatedvideos={relatedvideos} />
         </section>
       </div>
     </>

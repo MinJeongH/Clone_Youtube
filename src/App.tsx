@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Routes, useParams } from "react-router-dom";
 import styles from "./App.module.css";
 import VideoList from "./component/video_list/video_list";
 import Youtube from "./service/youtube";
-import { IVideo } from "./service/exportInterface";
+import { IVideo } from "./service/export_Interface";
 import VideoDetail from "./component/video_detail/video_detail";
 
 interface IAppProps {
