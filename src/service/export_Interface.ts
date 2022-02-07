@@ -13,8 +13,8 @@ export interface IVideo {
 }
 
 export interface IRelatedVideo{
-  id: string;
-  snippet: ISnippet;
+  id: IVideoId;
+  snippet: ISnippet|undefined;
 }
 
 interface ISnippet{
@@ -29,6 +29,12 @@ interface ISnippet{
 
 interface IStatistics {
   viewCount : string;
+  likeCount : string;
+  dislikeCount : string;
+}
+
+interface IVideoId{
+  videoId : string;
 }
 
 interface IThumbnail{

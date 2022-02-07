@@ -8,6 +8,9 @@ import SideBar from "../side_bar/side_bar";
 import SideBarWide from "../side_bar/side_bar_wide";
 import VideoRelated from "../video_related/video_related";
 import VideoList from "../video_list/video_list";
+import { viewToCount } from "../../common/countViews";
+import { likeToCount } from "../../common/countLike";
+import { dateCheck } from "../../common/dateCheck";
 
 interface IYoutubeProps {
   youtube: Youtube;
@@ -45,13 +48,33 @@ const VideoDetail = ({ youtube }: IYoutubeProps) => {
                 frameBorder="0"
                 allowFullScreen
               ></iframe>
-              <p className={styles.title}>{selectvideo.snippet.title}</p>
-              <p className={styles.channel}>
-                {selectvideo.snippet.channelTitle}
-              </p>
-              <pre className={styles.description}>
-                {selectvideo.snippet.description}
-              </pre>
+              <div className={styles.texts}>
+                <p className={styles.title}>{selectvideo.snippet.title}</p>
+                <div className={styles.textdetail}>
+                  <div className={styles.count}>
+                    <p className={styles.views}>
+                      {viewToCount(selectvideo.statistics.viewCount)}
+                    </p>
+                    <p className={styles.date}>
+                      {dateCheck(selectvideo.snippet.publishedAt)}
+                    </p>
+                  </div>
+                  <div className={styles.like}>
+                    <span className={`material-icons ${styles.likeicon}`}>
+                      thumb_up_off_alt
+                    </span>
+                    <p className={styles.liketext}>
+                      {likeToCount(selectvideo.statistics.likeCount)}
+                    </p>
+                  </div>
+                </div>
+                <p className={styles.channel}>
+                  {selectvideo.snippet.channelTitle}
+                </p>
+                <pre className={styles.description}>
+                  {selectvideo.snippet.description}
+                </pre>
+              </div>
             </>
           )}
         </section>

@@ -6,9 +6,16 @@ import styles from "./video_related.module.css";
 const VideoRelated = ({ relatedvideos }: IRelatedVideoList) => {
   return (
     <div className={styles.listcontainer}>
-      {relatedvideos.map((relatedvideo) => (
-        <VideoRelatedList id={relatedvideo.id} snippet={relatedvideo.snippet} />
-      ))}
+      {relatedvideos.map((relatedvideo) => {
+        if (relatedvideo.snippet) {
+          return (
+            <VideoRelatedList
+              id={relatedvideo.id}
+              snippet={relatedvideo.snippet}
+            />
+          );
+        } else return <></>;
+      })}
     </div>
   );
 };

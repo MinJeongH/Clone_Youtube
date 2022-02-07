@@ -49,7 +49,19 @@ class Youtube {
         regionCode: 'KR',
       },
     })
+    return response.data.items;
+  }
 
+  async search(query:string) {
+    const response = await this.youtube.get('search', {
+      params: {
+        type: 'video',
+        part: 'snippet',
+        maxResults: 20,
+        q: query,
+        regionCode: 'KR',
+      },
+    })
     return response.data.items;
   }
 }
