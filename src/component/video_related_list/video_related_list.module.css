@@ -4,6 +4,7 @@
   display: flex;
   margin: 0 16px;
   margin-bottom: 10px;
+  width: 100%;
 }
 
 .video {
@@ -36,6 +37,7 @@
 .metadata {
   display: flex;
   flex-direction: row;
+  width: 70%;
   cursor: pointer;
   padding: 0 5px;
 }
@@ -43,6 +45,7 @@
 .texts {
   color: makerWhite;
   font-size: 14px;
+  width: 100%;
 }
 
 .title {
@@ -51,7 +54,7 @@
   -webkit-box-orient: vertical;
   margin: 0;
   padding-top: 12px;
-  width: 210px;
+  min-width: 210px;
   height: 2.5em;
   overflow: hidden;
   text-overflow: ellipsis;

@@ -3,6 +3,7 @@
 .sidebackground {
   display: flex;
   position: absolute;
+  transform: translate(0, 0);
   top: 0px;
   background-color: makerBlack;
   width: 100%;
@@ -14,6 +15,7 @@
   display: flex;
   flex-direction: column;
   position: sticky;
+  transform: translate(0, 0);
   top: 50px;
   width: 290px;
   height: 100vh;

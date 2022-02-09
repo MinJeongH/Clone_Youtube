@@ -1,0 +1,14 @@
+.main {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+}
+
+.listcontainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  margin-top: 20px;
+  margin-left: 50px;
+}

@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 const VideoSearchItem = ({ snippet, q, id }: ISearch) => {
   return (
     <li className={styles.container}>
-      <Link to={`/video/${id.videoId}`}>
+      <Link to={`/video/${id.videoId}`} className={styles.link}>
         <div className={styles.metadata}>
           <img
             className={styles.thumnail}

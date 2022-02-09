@@ -12,12 +12,14 @@ interface IVideoSearchProps {
 
 const VideoSearch = ({ searches, showside }: IVideoSearchProps) => {
   return (
-    <div>
+    <div className={styles.main}>
       {showside && <SideBarWide />}
       <SideBar showside={showside} />
-      {searches.map((video) => (
-        <VideoSearchItem snippet={video.snippet} q={video.q} id={video.id} />
-      ))}
+      <div className={styles.listcontainer}>
+        {searches.map((video) => (
+          <VideoSearchItem snippet={video.snippet} q={video.q} id={video.id} />
+        ))}
+      </div>
     </div>
   );
 };

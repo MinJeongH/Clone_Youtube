@@ -26,12 +26,13 @@ function App({ youtube }: IAppProps) {
     if (wordvalue) {
       youtube.search(wordvalue).then((searches) => setSearches(searches));
     }
-  });
+  }, [wordvalue]);
 
   return (
     <div className={styles.topContainer}>
       <BrowserRouter>
         <Header setShowside={setShowside} setWordvalue={setWordvalue} />
+
         <Routes>
           <Route
             path="/"
