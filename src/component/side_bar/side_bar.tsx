@@ -2,11 +2,11 @@ import React from "react";
 import { Link } from "react-router-dom";
 import styles from "./side_bar.module.css";
 
-interface Ishowside {
+interface ISideBarProps {
   showside: boolean;
 }
 
-const SideBar = ({ showside }: Ishowside) => {
+const SideBar = ({ showside }: ISideBarProps) => {
   return (
     <section className={`${styles.sidebar} ${showside && styles.sidebarLeft}`}>
       <Link to={"/"} className={styles.linkHome}>

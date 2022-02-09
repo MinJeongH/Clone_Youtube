@@ -3,22 +3,19 @@ import { useParams } from "react-router-dom";
 import { IRelatedVideo, IVideo } from "../../service/export_Interface";
 import styles from "./video_detail.module.css";
 import Youtube from "../../service/youtube";
-import Header from "../header/header";
-import SideBar from "../side_bar/side_bar";
 import SideBarWide from "../side_bar/side_bar_wide";
 import VideoRelated from "../video_related/video_related";
-import VideoList from "../video_list/video_list";
 import { viewToCount } from "../../common/countViews";
 import { likeToCount } from "../../common/countLike";
 import { dateCheck } from "../../common/dateCheck";
 
-interface IYoutubeProps {
+interface IVideoDetailProps {
   youtube: Youtube;
+  showside: boolean;
 }
 
-const VideoDetail = ({ youtube }: IYoutubeProps) => {
+const VideoDetail = ({ youtube, showside }: IVideoDetailProps) => {
   const [selectvideo, setSelectvideo] = useState<IVideo>();
-  const [showside, setShowside] = useState(false);
   const [relatedvideos, setRelatedvideos] = useState<IRelatedVideo[]>([]);
   const { idparams } = useParams();
 
@@ -32,10 +29,9 @@ const VideoDetail = ({ youtube }: IYoutubeProps) => {
   }, [idparams]);
 
   return (
-    <>
-      <Header setShowside={setShowside} />
-      <div className={styles.main}>
-        {showside && <SideBarWide />}
+    <div className={styles.main}>
+      {showside && <SideBarWide />}
+      <div className={styles.container}>
         <section className={styles.detail}>
           {selectvideo && (
             <>
@@ -82,7 +78,7 @@ const VideoDetail = ({ youtube }: IYoutubeProps) => {
           <VideoRelated relatedvideos={relatedvideos} />
         </section>
       </div>
-    </>
+    </div>
   );
 };
 

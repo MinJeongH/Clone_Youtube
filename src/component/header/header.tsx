@@ -1,14 +1,38 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { useRef } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import styles from "./header.module.css";
 
-interface IsetShowside {
+interface IHeaderProps {
   setShowside: React.Dispatch<React.SetStateAction<boolean>>;
+  setWordvalue: React.Dispatch<React.SetStateAction<string>>;
 }
 
-const Header = ({ setShowside }: IsetShowside) => {
+const Header = ({ setShowside, setWordvalue }: IHeaderProps) => {
+  const inputRef = useRef<HTMLInputElement>(null);
+  const navi = useNavigate();
+
   const sendShowside = () => {
     setShowside((prev) => !prev);
+  };
+
+  const inputSearch = () => {
+    if (inputRef.current) {
+      const value = inputRef.current.value;
+      setWordvalue(value);
+      console.log(value);
+    }
+  };
+
+  const onClickBtn = () => {
+    inputSearch();
+  };
+
+  const onKeyPress = (event: React.KeyboardEvent<HTMLInputElement>) => {
+    if (event.code === "Enter") {
+      navi("/search");
+      inputSearch();
+    }
   };
 
   return (
@@ -23,10 +47,20 @@ const Header = ({ setShowside }: IsetShowside) => {
         </Link>
       </div>
       <div className={styles.search}>
-        <input className={styles.input} type="search" placeholder="Search" />
-        <button className={styles.button}>
-          <span className={`material-icons ${styles.searchIcon}`}>search</span>
-        </button>
+        <input
+          ref={inputRef}
+          className={styles.input}
+          type="search"
+          placeholder="Search"
+          onKeyPress={onKeyPress}
+        />
+        <Link to={"/search"}>
+          <button className={styles.button} onClick={onClickBtn}>
+            <span className={`material-icons ${styles.searchIcon}`}>
+              search
+            </span>
+          </button>
+        </Link>
       </div>
       <div className={styles.usermenu}>
         <span className={`material-icons ${styles.video}`}>video_call</span>

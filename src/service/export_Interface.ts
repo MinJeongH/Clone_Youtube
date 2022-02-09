@@ -1,9 +1,7 @@
-export interface IVideoList{
-  videos: IVideo[];
-}
-
-export interface IRelatedVideoList{
-  relatedvideos: IRelatedVideo[];
+export interface ISearch{
+  snippet : ISnippet;
+  q : string;
+  id : IVideoId;
 }
 
 export interface IVideo {

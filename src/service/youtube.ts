@@ -33,7 +33,6 @@ class Youtube {
       else{return undefined}
     } catch (e){
       if(axios.isAxiosError(e)){
-        console.log(e.code)
         return undefined
       }
     }
