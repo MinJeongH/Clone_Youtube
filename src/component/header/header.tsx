@@ -41,7 +41,7 @@ const Header = ({ setShowside, setWordvalue }: IHeaderProps) => {
         <span className={`material-icons ${styles.bar}`} onClick={sendShowside}>
           menu
         </span>
-        <Link to={"/"} className={styles.home}>
+        <Link to={"/Clone_Youtube"} className={styles.home}>
           <img className={styles.imgs} src="/images/logo.png" alt="logo" />
           <h1 className={styles.title}>Youtube</h1>
         </Link>

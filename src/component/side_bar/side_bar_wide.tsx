@@ -8,7 +8,7 @@ const SideBarWide = () => {
       <section className={styles.sidebarWide}>
         <div className={styles.barcontent}>
           <div className={styles.homeguide}>
-            <Link to={"/"} className={styles.linkHome}>
+            <Link to={"/Clone_Youtube"} className={styles.linkHome}>
               <button className={styles.button}>
                 <span className={`material-icons ${styles.home}`}>home</span>홈
               </button>

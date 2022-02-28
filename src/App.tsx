@@ -35,7 +35,7 @@ function App({ youtube }: IAppProps) {
 
         <Routes>
           <Route
-            path="/"
+            path="/Clone_Youtube"
             element={<VideoList videos={videos} showside={showside} />}
           />
           <Route

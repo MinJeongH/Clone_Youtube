@@ -9,7 +9,7 @@ interface ISideBarProps {
 const SideBar = ({ showside }: ISideBarProps) => {
   return (
     <section className={`${styles.sidebar} ${showside && styles.sidebarLeft}`}>
-      <Link to={"/"} className={styles.linkHome}>
+      <Link to={"/Clone_Youtube"} className={styles.linkHome}>
         <button className={styles.button}>
           <span className={`material-icons ${styles.home}`}>home</span>홈
         </button>
