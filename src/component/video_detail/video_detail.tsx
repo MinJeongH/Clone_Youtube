@@ -1,6 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { IRelatedVideo, IVideo } from "../../service/export_Interface";
+import {
+  IChannels,
+  IRelatedVideo,
+  IVideo,
+} from "../../service/export_Interface";
 import styles from "./video_detail.module.css";
 import Youtube from "../../service/youtube";
 import SideBarWide from "../side_bar/side_bar_wide";
@@ -17,6 +21,7 @@ interface IVideoDetailProps {
 const VideoDetail = ({ youtube, showside }: IVideoDetailProps) => {
   const [selectvideo, setSelectvideo] = useState<IVideo>();
   const [relatedvideos, setRelatedvideos] = useState<IRelatedVideo[]>([]);
+  const [channels, setChannels] = useState<IChannels>();
   const { idparams } = useParams();
 
   useEffect(() => {
@@ -27,6 +32,14 @@ const VideoDetail = ({ youtube, showside }: IVideoDetailProps) => {
         .then((relatedvideos) => setRelatedvideos(relatedvideos));
     }
   }, [idparams]);
+
+  useEffect(() => {
+    if (selectvideo?.snippet.channelId) {
+      youtube
+        .channel(selectvideo?.snippet.channelId)
+        .then((channelid) => setChannels(channelid));
+    }
+  }, [selectvideo?.snippet.channelId]);
 
   return (
     <div className={styles.main}>
@@ -40,7 +53,7 @@ const VideoDetail = ({ youtube, showside }: IVideoDetailProps) => {
                 title="youtube video player"
                 width="100%"
                 height="500px"
-                src={`http://www.youtube.com/embed/${idparams}`}
+                src={`https://www.youtube.com/embed/${idparams}`}
                 frameBorder="0"
                 allowFullScreen
               ></iframe>
@@ -64,12 +77,21 @@ const VideoDetail = ({ youtube, showside }: IVideoDetailProps) => {
                     </p>
                   </div>
                 </div>
-                <p className={styles.channel}>
-                  {selectvideo.snippet.channelTitle}
-                </p>
-                <pre className={styles.description}>
-                  {selectvideo.snippet.description}
-                </pre>
+                <div className={styles.channel_contents}>
+                  <img
+                    className={styles.channel_img}
+                    src={channels?.snippet.thumbnails.medium.url}
+                    alt="channel_img"
+                  />
+                  <div className={styles.channel_text}>
+                    <p className={styles.channel_title}>
+                      {selectvideo.snippet.channelTitle}
+                    </p>
+                    <pre className={styles.description}>
+                      {selectvideo.snippet.description}
+                    </pre>
+                  </div>
+                </div>
               </div>
             </>
           )}

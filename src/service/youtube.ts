@@ -63,6 +63,22 @@ class Youtube {
     })
     return response.data.items;
   }
+
+  async channel(id:string) {
+    try{const response = await this.youtube.get('channels', {
+      params: {
+        part: 'snippet',
+        id: id,
+      }
+    })
+    if(response.data.items.length!==0){return response.data.items[0]}
+    else{return undefined}}
+    catch (e){
+      if(axios.isAxiosError(e)){
+        return undefined
+      }
+    }
+  }
 }
 
 export default Youtube;

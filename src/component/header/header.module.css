@@ -68,12 +68,16 @@
 
 .button {
   border: 0;
+  height: 38px;
   background-color: makerGrey;
   padding: 0 15px 0 15px;
   cursor: pointer;
 }
 
 .searchIcon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-size: 2rem;
   color: makerWhite;
 }

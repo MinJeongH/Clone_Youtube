@@ -47,6 +47,20 @@
 
 .channel {
   display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.channel_img {
+  display: flex;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 100%;
+  margin-right: 10px;
+}
+
+.channel_title {
+  display: flex;
   font-size: 14px;
   color: makerGrey;
   margin: 0;

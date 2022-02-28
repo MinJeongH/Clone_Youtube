@@ -1,15 +1,36 @@
-import React, { MouseEvent, useState } from "react";
+import React, { MouseEvent, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import styles from "./video_item.module.css";
 import { faEllipsisV } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { IVideo } from "../../service/export_Interface";
-
+import {
+  IChannels,
+  ISnippet,
+  IStatistics,
+  IVideo,
+} from "../../service/export_Interface";
 import { timeForToday } from "../../common/time";
 import { viewToCount } from "../../common/countViews";
+import Youtube from "../../service/youtube";
 
-const VideoItem = ({ snippet, statistics, id }: IVideo) => {
+interface IVideoItemProps {
+  youtube: Youtube;
+  snippet: ISnippet;
+  statistics: IStatistics;
+  id: string;
+}
+
+const VideoItem = ({ youtube, snippet, statistics, id }: IVideoItemProps) => {
   const [showMenu, setShowMenu] = useState(false);
+  const [channels, setChannels] = useState<IChannels>();
+
+  useEffect(() => {
+    if (snippet.channelId) {
+      youtube
+        .channel(snippet.channelId)
+        .then((channelid) => setChannels(channelid));
+    }
+  }, [id]);
 
   const menuIconEventIn = (event: MouseEvent<HTMLDivElement>) => {
     event.preventDefault();
@@ -37,8 +58,8 @@ const VideoItem = ({ snippet, statistics, id }: IVideo) => {
           <div className={styles.metadata}>
             <img
               className={styles.picon}
-              src="/images/picon_sample.svg"
-              alt="usericon"
+              src={channels?.snippet.thumbnails.medium.url}
+              alt="channel_img"
             />
             <div className={styles.texts}>
               <p className={styles.title}>{snippet.title}</p>

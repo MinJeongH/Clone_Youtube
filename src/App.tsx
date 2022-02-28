@@ -36,7 +36,13 @@ function App({ youtube }: IAppProps) {
         <Routes>
           <Route
             path="/Clone_Youtube"
-            element={<VideoList videos={videos} showside={showside} />}
+            element={
+              <VideoList
+                youtube={youtube}
+                videos={videos}
+                showside={showside}
+              />
+            }
           />
           <Route
             path="/video/:idparams"
@@ -44,7 +50,13 @@ function App({ youtube }: IAppProps) {
           />
           <Route
             path="/search"
-            element={<VideoSearch searches={searches} showside={showside} />}
+            element={
+              <VideoSearch
+                youtube={youtube}
+                searches={searches}
+                showside={showside}
+              />
+            }
           />
         </Routes>
       </BrowserRouter>

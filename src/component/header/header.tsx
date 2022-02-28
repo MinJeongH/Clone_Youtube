@@ -1,6 +1,6 @@
 import React from "react";
 import { useRef } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate, useParams } from "react-router-dom";
 import styles from "./header.module.css";
 
 interface IHeaderProps {
@@ -10,7 +10,13 @@ interface IHeaderProps {
 
 const Header = ({ setShowside, setWordvalue }: IHeaderProps) => {
   const inputRef = useRef<HTMLInputElement>(null);
+
   const navi = useNavigate();
+  const { pathname } = useLocation();
+
+  if (pathname === "/Clone_Youtube" && inputRef.current) {
+    inputRef.current.value = "";
+  }
 
   const sendShowside = () => {
     setShowside((prev) => !prev);
@@ -20,7 +26,6 @@ const Header = ({ setShowside, setWordvalue }: IHeaderProps) => {
     if (inputRef.current) {
       const value = inputRef.current.value;
       setWordvalue(value);
-      console.log(value);
     }
   };
 
@@ -42,7 +47,11 @@ const Header = ({ setShowside, setWordvalue }: IHeaderProps) => {
           menu
         </span>
         <Link to={"/Clone_Youtube"} className={styles.home}>
-          <img className={styles.imgs} src="/images/logo.png" alt="logo" />
+          <img
+            className={styles.imgs}
+            src="https://minjeongh.github.io/Clone_Youtube/images/logo.png"
+            alt="logo"
+          />
           <h1 className={styles.title}>Youtube</h1>
         </Link>
       </div>

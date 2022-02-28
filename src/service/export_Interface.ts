@@ -15,7 +15,12 @@ export interface IRelatedVideo{
   snippet: ISnippet|undefined;
 }
 
-interface ISnippet{
+export interface IChannels {
+  id: string;
+  snippet: ISnippet;
+}
+
+export interface ISnippet{
   title: string;
   channelId: string; 
   thumbnails: { [thumnailSize: string]:IThumbnail}; 
@@ -25,13 +30,13 @@ interface ISnippet{
   description: string;
 }
 
-interface IStatistics {
+export interface IStatistics {
   viewCount : string;
   likeCount : string;
   dislikeCount : string;
 }
 
-interface IVideoId{
+export interface IVideoId{
   videoId : string;
 }
 
